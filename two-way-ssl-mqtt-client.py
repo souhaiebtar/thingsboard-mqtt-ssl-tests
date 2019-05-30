@@ -29,7 +29,7 @@ client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", 
                        tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
 
 client.tls_insecure_set(True)
-client.connect("localhost", 18831, 1)
+client.connect('localhost', 18832, 1)
 
 
 # Blocking call that processes network traffic, dispatches callbacks and

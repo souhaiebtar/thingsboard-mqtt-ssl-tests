@@ -27,5 +27,17 @@ now from inside `thingsboard_cassandra` folder, run the command `docker cp certi
 
 > N.B: if you got an error when copying file, check the name of the running container( using docker ps) and run the `docker cp ...` command again with the new name,
 
-if it's ok
+### How to run one way ssl
+create a new Device using the webUI, and under Details->Manage credentials->Access Token
+copy/paste `VHmfuIy92oTiRa9pDyvx` (or you can copy the generated token and replace `VHmfuIy92oTiRa9pDyvx` on line '31')
+
 now run `make run-oneway`
+
+### How to run two way ssl
+
+from inside the folder `keyFiles` copy the content of the file `mqttclient.pub.pem` and create/modify a new device using the webUI, and under Details->Manage credentials->choose `X.509 certificate` under credentials type, paste the content that we copied from `mqttclient.pub.pem` and save 
+
+now run `make run-twoway`
+
+
+> N.B: all of this was tested against the official release 2.0.3 of thingsboard.
