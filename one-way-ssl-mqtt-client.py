@@ -25,11 +25,12 @@ client.on_connect = on_connect
 client.on_message = on_message
 client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
 
-client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
+client.tls_set(ca_certs="mqttserver.pub.pem", certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
                        tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
 
+client.username_pw_set("VHmfuIy92oTiRa9pDyvx")
 client.tls_insecure_set(True)
-client.connect("localhost", 18831, 1)
+client.connect('localhost', 18832, 1)
 
 
 # Blocking call that processes network traffic, dispatches callbacks and
