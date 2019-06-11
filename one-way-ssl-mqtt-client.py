@@ -28,9 +28,9 @@ client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}
 client.tls_set(ca_certs="mqttserver.pub.pem", certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
                        tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
 
-client.username_pw_set("VHmfuIy92oTiRa9pDyvx")
+client.username_pw_set("FEHLOsgMOiKNS8LfTWnC")
 client.tls_insecure_set(True)
-client.connect('localhost', 18832, 1)
+client.connect('iot.m2m-group.com', 1883, 1)
 
 
 # Blocking call that processes network traffic, dispatches callbacks and
