@@ -1,4 +1,4 @@
-# One way ssl test for thingsboard
+# One/Two way ssl test for thingsboard
 
 
 
@@ -41,3 +41,17 @@ now run `make run-twoway`
 
 
 > N.B: all of this was tested against the official release 2.0.3 of thingsboard.
+
+> inside the `keyFiles` folder, you can generate a **.key** file from *.p12* using: [1][1]
+
+>	```SHELL
+> 	openssl pkcs12 -in mqttclient.p12 -nocerts -nodes -out mqttclient.key
+> 	``` 
+
+to use open running the following command to test two way ssl
+
+```SHELL
+mosquitto_pub -h "127.0.0.1" -p 1883 --tls-version tlsv1.2 -t "v1/devices/me/telemetry" --cafile mqttserver.pub.pem --key mqttclient.key --cert mqttclient.nopass.pem -m '{"temperature":12.3, "humidity":45.6}'
+```
+
+[1]: https://serverfault.com/questions/715827/how-to-generate-key-and-crt-file-from-jks-file-for-httpd-apache-server
