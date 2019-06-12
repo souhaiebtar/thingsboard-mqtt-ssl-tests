@@ -33,6 +33,13 @@ copy/paste `VHmfuIy92oTiRa9pDyvx` (or you can copy the generated token and repla
 
 now run `make run-oneway`
 
+using mosquitto_pub
+
+```SHELL
+mosquitto_pub -d -h "localhost" -p 1883 --tls-version tlsv1.2 -t "v1/devices/me/telemetry" --cafile mqttserver.pub.pem -u "l5rjpJmZgATHDY4j2aXO" -m \
+"{\"4CH1_120\": 4,\"4CH1_121\": 0.02,\"4CH1_130\": 0.02}"
+```
+
 ### How to run two way ssl
 
 from inside the folder `keyFiles` copy the content of the file `mqttclient.pub.pem` and create/modify a new device using the webUI, and under Details->Manage credentials->choose `X.509 certificate` under credentials type, paste the content that we copied from `mqttclient.pub.pem` and save 
@@ -42,7 +49,7 @@ now run `make run-twoway`
 
 > N.B: all of this was tested against the official release 2.0.3 of thingsboard.
 
-> inside the `keyFiles` folder, you can generate a **.key** file from *.p12* using: [1][1]
+> you can generate a **.key** file from *.p12* using: [1][1]
 
 >	```SHELL
 > 	openssl pkcs12 -in mqttclient.p12 -nocerts -nodes -out mqttclient.key

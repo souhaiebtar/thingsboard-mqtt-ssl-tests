@@ -1,0 +1,5 @@
+{
+  "python.pythonPath": "/home/tunknown/.pyenv/shims/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
+}

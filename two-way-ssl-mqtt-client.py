@@ -27,7 +27,7 @@ client.on_message = on_message
 client.publish('v1/devices/me/telemetry',"{\"temperature\":\"20000\"}",1)
 
 client.tls_set(ca_certs="mqttserver.pub.pem", certfile="mqttclient.nopass.pem", keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                       tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
+                       tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
 
 client.tls_insecure_set(True)
 client.connect('iot.m2m-group.com', 1883, 1)

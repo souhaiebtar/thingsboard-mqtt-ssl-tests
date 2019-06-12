@@ -24,13 +24,13 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 # client.publish('v1/devices/me/attributes/request/1', "{\"clientKeys\":\"model\"}", 1)
-client.publish('v1/devices/me/telemetry',"{\"temperature\":\"1000000\"}",1)
+client.publish('v1/devices/me/telemetry',"{\"4CH1_120\":\"3\"}",1)
 
 client.tls_set(ca_certs="mqttserver.pub.pem", certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                       tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None);
+                       tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
 
-client.username_pw_set("FEHLOsgMOiKNS8LfTWnC")
-client.tls_insecure_set(True)
+client.username_pw_set("l5rjpJmZgATHDY4j2dXO")
+client.tls_insecure_set(False)
 client.enable_logger()
 client.connect('iot.m2m-group.com', 1883, 1)
 
