@@ -27,6 +27,17 @@ now from inside `thingsboard_cassandra` folder, run the command `docker cp certi
 
 > N.B: if you got an error when copying file, check the name of the running container( using docker ps) and run the `docker cp ...` command again with the new name,
 
+### generate a new client key
+
+to generate a new client key:
+
+```SHELL
+./client.keygen.sh
+```
+
+> N.B: before running it make sure you already moved/removed all file starting with `mqttclient`, 
+
+
 ### How to run one way ssl
 create a new Device using the webUI, and under Details->Manage credentials->Access Token
 copy/paste `VHmfuIy92oTiRa9pDyvx` (or you can copy the generated token and replace `VHmfuIy92oTiRa9pDyvx` on line '31')
